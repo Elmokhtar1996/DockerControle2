@@ -13,10 +13,7 @@ const generateTasks = (i) =>
   new Array(i).fill(1).map((_) => ({ type: taskType(), args: args() }))
 
  let workers = [
-{ url: 'http://localhost:8080', id: '0' },
-{ url: 'http://localhost:8081', id: '1' },
-{ url: 'http://localhost:8082', id: '2' },
-{ url: 'http://localhost:8083', id: '3' }
+
  ]
 const app = express()
 app.use(express.json())
@@ -31,7 +28,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
-  const { url, id } = req.body
+  const { url, id,  } = req.body
   console.log(`Register: adding ${url} worker: ${id}`)
   workers.push({ url, id })
   res.send('ok')
