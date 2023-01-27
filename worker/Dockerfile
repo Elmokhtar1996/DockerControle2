@@ -4,4 +4,4 @@ RUN yarn
 ENV MULT=true \
     ADD=true 
 EXPOSE 8080
-CMD [ "node", "main.js" ]
+CMD [ "node", "main.js" ] 
