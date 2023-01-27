@@ -1,8 +1,7 @@
-FROM node:16.15.1
-# Create app directory
-WORKDIR /app
-COPY package.json ./package.json
-RUN npm install
+FROM node:18.2.0
 COPY . .
-EXPOSE 3000
-CMD [ "node", "main.js"]
+RUN yarn
+ENV MULT=true \
+    ADD=true 
+EXPOSE 8080
+CMD [ "node", "main.js" ]
